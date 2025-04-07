@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+{% block headertitle %}David Hildingsson{% endblock %}
+
+{% block body %}
+    <div class="landing-container">
+        <div class="left-inner-container">
+            <h2>Vem är jag? <h2/>
+            <p>Jag är 27 år gammal och började att programmera när jag fyllde 20 år. Jag har varit på lite olika ställen och försökt lära mig programmering men har inte hittat rätt. Efter några års uppehåll har jag fått upp mitt intresse igen för programmering. <p/>
+            
+            <h2> Intressen ? <h2 />
+            <p>Jag har alltid tyckt om sport av alla dess slag. Jag har genom hela livet alltid spelat både fotboll och handboll och det är två sporter som håller mig nära om hjärtat än idag.
+                Fritiden spenderar jag på en fotbollsplan, handbollsplan eller framför datorn. </p>
+        </div>
+        <div>
+            <img src=" {{ asset('img/me.png') }}" class="me-img" alt="David"/>
+        </div>
+    </div>
+{% endblock %}

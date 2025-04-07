@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+{% block headertitle %}About{% endblock %}
+
+{% block body %}
+    <h1>About DV1608 "mvc"</h1>
+    <div class="about-wrapper">
+    <div>
+        <p> MVC är kursen då vi lär oss om objektorienterad programmering i PHP och i ett webbaserat ramverk "symfony". Vi kommer även att få lära oss om enhetstestning och lite databas. </p>
+        <img src=" {{ asset('img/about.jpg') }}" class="about-img" alt="Code"/>
+    </div>
+    <div class="about-right-inner">
+        <h4>Länkar</h4>
+        <a href="https://github.com/dbwebb-se/mvc">Kursrepo</a>
+        <a href="https://github.com/hildingen/mvc-report">Mitt repo </a>
+    </div>
+    </div>
+{% endblock %}

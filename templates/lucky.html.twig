@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Lucky number{% endblock %}
+{% block headertitle %}Lucky number{% endblock %}
+
+{% block body %}
+    <div class="lucky-wrap">
+        <h2>Ditt turnummer</h2>
+        <p class="lucky-number-p">{{ number }}</p>
+        <a href="/lucky" class="new-lucky-btn">Nytt nummer</a>
+    <div class="lucky-imgs">
+        <img src=" {{ asset('img/lucky-1.jpg') }}" class="about-img" alt="Lucky-1"/>
+        <img src=" {{ asset('img/lucky-2.png') }}" class="about-img" alt="Lucky-2"/>
+    </div>
+    </div>
+{% endblock %}
