@@ -24,6 +24,11 @@ class SessionController extends AbstractController
     {
         $session->clear();
 
+        $this->addFlash(
+            'notice',
+            'Session was deleted'
+        );
+
         $this->redirectToRoute('session');
     }
 }

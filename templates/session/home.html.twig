@@ -5,6 +5,16 @@
 {% block headertitle %}Session{% endblock %}
 
 {% block body %}
-   <h1>Session</h1>
+    <h2>In session:</h2>
+   {% if session|length > 0 %}
+        <ul>
+         {% for item in session %}
+            <li>{{item}}</li>
+         {% endfor %}
+         </ul>
+   {% else %}
+    <p>Session is empty</p>
+   {% endif %}
 
+   {{ include('flash.html.twig') }}
 {% endblock %}
