@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card{% endblock %}
+{% block headertitle %}Card{% endblock %}
+
+{% block body %}
+    <h1>Here we will display some cards</h1>
+
+    <ul>
+    {% for card in card_hand %}
+        <li>{{card}}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
