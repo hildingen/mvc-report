@@ -6,11 +6,59 @@
 {% block body %}
     {{ include('/card/card_nav.html.twig') }}
 
-    <h1>Here we will display some cards</h1>
+    <h1>Home for card routes</h1>
 
+    <h2>Struktur på klasser</h2>
+
+    <h3>Följande klasser används</h3>
     <ul>
-    {% for card in deck %}
-        <li>{{card}}</li>
-    {% endfor %}
+        <li>Card</li>
+        <li>CardGraphic</li>
+        <li>CardHand</li>
+        <li>DeckOfCards</li>
     </ul>
+
+    <h3>Beskrivning av klasser</h3>
+
+    <h4>Card</h4>
+
+    <p>
+        Simpel Card klass som har en protected instansvariabel för att hålla kortets värde. Det finns en konstruktor som tar emot ett värde och stoppar in i instansvariablen
+        Det finns en publik metod getAsString() som returnerar värdet som en sträng.
+    </p>
+
+    <hr />
+
+     <h4>CardGraphic</h4>
+
+     <p>
+        Ärver från Card klassen och har en privat instansvariabel "representation" som är en array där vi kan plocka ut rätt kort värde.
+        I konstruktorn i klassen så anropar vi Card klassen konstruktor och skickar med ett värde som vi hämtar från representation arrayen. Ett exempel på detta kan vara att vi får in ett
+        värde på 5 i CardGraphic konstruktorn, vi hämtar ut värdet på plats 5 i representation arrayen och skickar med det till Card klassens konstruktor.
+     </p>
+
+     <hr />
+
+     <h4>CardHand</h4>
+
+     <p>
+        En privat instansvariabel vi namn hand finns som är av typen array. Vi har 2 publika metoder i denna klassen "add" som tar emot ett kort av typen Card och lägger till i arrayen och metoden "getString" som returnerar vad vi har i arrayen som en sträng.
+     </p>
+
+     <hr/>
+
+     <h4>DeckOfCards</h4>
+
+     <p>
+        En privat instansvariabel "deck" som håller kortleken. Metoderna "add", "shuffleDeck", "drawCard" och "getString". Metoderna beskriver lite sig själva. Add lägger till kort i arrayen, shuffleDeck blandar arrayen, drawCard plockar ett kort med pop och getString returnerar arrayen.
+     </p>
+
+     <h3>UML<h3>
+
+    <img src=" {{ asset('img/uml-card.png') }}" alt="uml"/>
+
+    <h4>Förklaring<h4>
+
+    <p>CardGraphic ärver från Card. En instans av Card kan existera i 0 till 1 CardHand men den kan även existera i 0 till 1 DeckOfCards, därav aggregation koppling då kortet ska kunna flyttas mellan korthanden och kortleken och inte förstöras om man t.ex skulle ta bort korthanden.</p>
+
 {% endblock %}

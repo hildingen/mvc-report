@@ -199,4 +199,21 @@ nav ul li a:hover {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    padding: 0;
+}
+
+.basic-sub-nav {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    padding: 0;
+}
+
+.basic-sub-nav li a {
+    font-size: 1.3rem;
+    color: #000;
+}
+
+.basic-sub-nav li a:hover {
+    color: #123458;
 }

@@ -17,15 +17,7 @@ class CardController extends AbstractController
     #[Route("/card", name: "card")]
     public function home(): Response
     {
-        $deck = new DeckOfCards();
-        for ($i = 0; $i < 52; $i++) {
-            $deck->add(new CardGraphic($i));
-        }
-
-        $data = [
-            "deck" => $deck->getString(),
-        ];
-        return $this->render('card/card.html.twig', $data);
+        return $this->render('card/card.html.twig');
     }
 
     #[Route("/card/deck", name: "card_deck")]
@@ -35,7 +27,12 @@ class CardController extends AbstractController
 
         if (!$deck) {
             $deck = new DeckOfCards();
+            for ($i = 0; $i < 52; $i++) {
+                $deck->add(new CardGraphic($i));
+            }
         }
+
+        // Sortera på färg och värde
 
         $data = [
             "deck" => $deck->getString(),

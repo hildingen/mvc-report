@@ -9,10 +9,11 @@
     <h1>Draw nr of cards from deck</h1>
 
     <h2>Drawn cards: </h2>
+    <ul class="deck-container">
       {% for card in hand %}
         <li class="card">{{card}}</li>
     {% endfor %}
-
+    </ul>
     <h2>Cards left in deck:</h2>
     <p>{{deck|length}}</p>
 {% endblock %}
