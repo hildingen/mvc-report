@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Draw{% endblock %}
+{% block headertitle %}Draw{% endblock %}
+
+{% block body %}
+ {{ include('/card/card_nav.html.twig') }}
+
+    <h1>Draw nr of cards from deck</h1>
+
+    <h2>Drawn cards: </h2>
+      {% for card in hand %}
+        <li class="card">{{card}}</li>
+    {% endfor %}
+
+    <h2>Cards left in deck:</h2>
+    <p>{{deck|length}}</p>
+{% endblock %}
