@@ -8,13 +8,20 @@
     <h2>In session:</h2>
    {% if session|length > 0 %}
         <ul>
-         {% for item in session %}
-            <li>{{item}}</li>
+         {% for key, value in session %}
+            <li class="bold">{{key}}</li>
+            {% if value is iterable %}
+               {% for item in value %}
+               <li class="bold">{{item}}</li>
+               {% endfor %}
+            {% endif %}
          {% endfor %}
          </ul>
    {% else %}
     <p>Session is empty</p>
    {% endif %}
+
+   <a href="./session/delete">Delete session</a>
 
    {{ include('flash.html.twig') }}
 {% endblock %}

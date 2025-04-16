@@ -182,3 +182,21 @@ nav ul li a:hover {
 .flash-warning:before {
     content: "⚠";
 }
+
+.card {
+    padding: 4px 8px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 15px;
+    height: 30px;
+    text-align: center;
+}
+
+.deck-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}

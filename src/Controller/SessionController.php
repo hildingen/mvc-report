@@ -20,7 +20,7 @@ class SessionController extends AbstractController
     }
 
     #[Route("/session/delete", name: "session_delete")]
-    public function session_delete(SessionInterface $session)
+    public function session_delete(SessionInterface $session): Response
     {
         $session->clear();
 
@@ -29,6 +29,6 @@ class SessionController extends AbstractController
             'Session was deleted'
         );
 
-        $this->redirectToRoute('session');
+        return $this->redirectToRoute('session');
     }
 }

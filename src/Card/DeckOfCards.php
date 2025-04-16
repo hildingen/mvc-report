@@ -11,6 +11,16 @@ class DeckOfCards
         $this->deck[] = $card;
     }
 
+    public function shuffleDeck(): void
+    {
+        shuffle($this->deck);
+    }
+
+    public function drawCard(): Card
+    {
+        return array_pop($this->deck);
+    }
+
     public function getString(): array
     {
         $values = [];
