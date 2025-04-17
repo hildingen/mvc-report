@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class JsonController
 {
-
     #[Route("/api/quote")]
     public function jsonQuote(): Response
     {
