@@ -6,6 +6,13 @@ class DeckOfCards
 {
     private $deck = [];
 
+    public function __construct()
+    {
+        for ($i = 0; $i < 52; $i++) {
+            $this->deck[] = new CardGraphic($i);
+        }
+    }
+
     public function add(Card $card): void
     {
         $this->deck[] = $card;

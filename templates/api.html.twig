@@ -4,11 +4,35 @@
 {% block headertitle %}API{% endblock %}
 
 {% block body %}
-    <h1>Tillgängliga API</h1>
+    <h1>Available API</h1>
 
    <div class="api-wrap">
         <h2>GET "/api/quote"</h2>
 
-        <p>Få ett random citat</p>
+        <p>Get random quote.</p>
+    </div>
+
+     <div class="api-wrap">
+        <h2>GET "/api/deck"</h2>
+
+        <p>Get a deck of cards sorted by suit and value.</p>
+    </div>
+
+     <div class="api-wrap">
+        <h2>POST "/api/deck/shuffle"</h2>
+
+        <p>Shuffles deck of cards and returning it. Stores the deck of cards in session.</p>
+    </div>
+
+     <div class="api-wrap">
+        <h2>POST "/api/deck/draw"</h2>
+
+        <p>Draws 1 card from deck.</p>
+    </div>
+
+    <div class="api-wrap">
+        <h2>POST "/api/deck/draw/:number"</h2>
+
+        <p>Draws :number of cards from deck.</p>
     </div>
 {% endblock %}

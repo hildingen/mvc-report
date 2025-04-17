@@ -23,8 +23,8 @@
     <h4>Card</h4>
 
     <p>
-        Simpel Card klass som har en protected instansvariabel för att hålla kortets värde. Det finns en konstruktor som tar emot ett värde och stoppar in i instansvariablen
-        Det finns en publik metod getAsString() som returnerar värdet som en sträng.
+        Simpel Card klass som har två instansvariabler för att hålla kortets värde. Det finns en konstruktor som tar emot värdena och stoppar in i instansvariablerna
+        Det finns tre publika metoder som returnerar värdet som en sträng.
     </p>
 
     <hr />
@@ -32,7 +32,7 @@
      <h4>CardGraphic</h4>
 
      <p>
-        Ärver från Card klassen och har en privat instansvariabel "representation" som är en array där vi kan plocka ut rätt kort värde.
+        Ärver från Card klassen och har två privata instansvariabler "representation" som är en array där vi kan plocka ut rätt kort värde.
         I konstruktorn i klassen så anropar vi Card klassen konstruktor och skickar med ett värde som vi hämtar från representation arrayen. Ett exempel på detta kan vara att vi får in ett
         värde på 5 i CardGraphic konstruktorn, vi hämtar ut värdet på plats 5 i representation arrayen och skickar med det till Card klassens konstruktor.
      </p>
@@ -55,10 +55,10 @@
 
      <h3>UML<h3>
 
-    <img src=" {{ asset('img/uml-card.png') }}" alt="uml"/>
+    <img src=" {{ asset('img/kmom02-uml.png') }}" alt="uml"/>
 
     <h4>Förklaring<h4>
 
-    <p>CardGraphic ärver från Card. En instans av Card kan existera i 0 till 1 CardHand men den kan även existera i 0 till 1 DeckOfCards, därav aggregation koppling då kortet ska kunna flyttas mellan korthanden och kortleken och inte förstöras om man t.ex skulle ta bort korthanden.</p>
+    <p>CardGraphic ärver från Card. En instans av Card kan existera i 0 till 1 CardHand men den kan även existera i 0 till 1 DeckOfCards. Aggregation koppling mellan CardHand och Card då CardHand inte "äger" korten. Composition koppling mellan DeckOfCards och Card på DeckOfCards skapar kort i sin konstruktor.</p>
 
 {% endblock %}
