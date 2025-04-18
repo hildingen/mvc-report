@@ -21,10 +21,10 @@ class CardJsonController
             $session->set("deck", $deck);
         }
 
-        // Sort on value and suit
+        $deck_str = $deck->sortDeck();
 
         $data = [
-            'deck' => $deck->getString()
+            'deck' => $deck_str
         ];
 
         return new JsonResponse($data);
