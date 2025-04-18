@@ -21,6 +21,8 @@ class CardJsonController
             $session->set("deck", $deck);
         }
 
+        // Sort on value and suit
+
         $data = [
             'deck' => $deck->getString()
         ];

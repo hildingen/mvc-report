@@ -27,9 +27,7 @@ class CardController extends AbstractController
             $session->set("deck", $deck);
         }
 
-        $deck_str = $deck->getString();
-
-        asort($deck_str);
+        $deck_str = $deck->sortDeck();
 
         $data = [
             "deck" => $deck_str

@@ -36,4 +36,34 @@ class DeckOfCards
         }
         return $values;
     }
+
+    public function sortDeck(): array
+    {
+        $sortedDeck = [];
+        $hearts = [];
+        $spades = [];
+        $diamonds = [];
+        $clubs = [];
+
+        foreach ($this->deck as $card) {
+            if ($card->getSuit() == '♥') {
+                $hearts[] = $card->getAsString();
+            } elseif ($card->getSuit() == '♠') {
+                $spades[] = $card->getAsString();
+            } elseif ($card->getSuit() == '♦') {
+                $diamonds[] = $card->getAsString();
+            } elseif ($card->getSuit() == '♣') {
+                $clubs[] = $card->getAsString();
+            }
+        }
+
+        asort($hearts);
+        asort($spades);
+        asort($diamonds);
+        asort($clubs);
+
+        $sortedDeck = array_merge($hearts, $spades, $diamonds, $clubs);
+
+        return $sortedDeck;
+    }
 }
