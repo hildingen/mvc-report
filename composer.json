@@ -83,6 +83,13 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
             "importmap:install": "symfony-cmd"
         },
+        "phpmd": "tools/phpmd/vendor/bin/phpmd . text tools/phpmd/phpmd.xml || true",
+        "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -c tools/phpstan/phpstan.neon || true",
+        "lint": [
+            "@phpmd",
+            "@phpstan",
+            "@csfix:dry"
+        ],
         "post-install-cmd": [
             "@auto-scripts"
         ],
