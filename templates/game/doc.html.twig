@@ -5,6 +5,27 @@
 
 {% block body %}
    <h1>Docs</h1>
+   <h2>Imgs</h2>
     <img src=" {{ asset('img/flowchart-kmom03.png') }}"  alt="Flowchart"/>
     <img src=" {{ asset('img/kmom03-class-diagram.png') }}"  alt="Class diagram"/>
+    <h2>Pseudo code</h2>
+
+    <img src=" {{ asset('img/pseudo.png') }}"  alt="Pseudo code"/>
+
+    <h2>Klasser</h2>
+
+    <h3>Card</h3>
+    <p>Card kommer att hålla ett värde och svit som två protected variabler med tillhörande metoder.</p>
+
+    <h3>CardGraphic</h3>
+    <p>CardGraphic ärver från Card och lägger till visuell snygghet.</p>
+
+    <h3>Deck</h3>
+    <p>Deck kommer att innehålla 52 kort i en array av klassen Card.</p>
+
+    <h3>Hand</h3>
+    <p>Hand kommer att kunna ta kort från Deck och hantera värdena i korten.</p>
+
+    <h3>Game</h3>
+    <p>Game kommer att sköta game loopen och funktionaliteten för spelet.</p>
 {% endblock %}
