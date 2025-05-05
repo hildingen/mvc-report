@@ -4,5 +4,29 @@
 {% block headertitle %}Game 21{% endblock %}
 
 {% block body %}
-   <h1>Hello World!</h1>
+   <h1>Game 21!</h1>
+   <hr/>
+   <h2>Rules</h2>
+
+   <h3>Basic rules:</h3>
+   <ul>
+      <li>Get as close as you can to 21!</li>
+      <li>If you go over 21 you will auto bust!</li>
+      <li>You will be given 1 card to stard with and have the option to take 1 more card or end your turn.</li>
+      <li>If you have below 21 points and decided to end your turn, the turn will be the bankirs.</li>
+      <li>The bankir will take cards until the bankir has more points than you or going bust.<li>
+      <li>If points is equal the bankir wins.</li>
+   </ul>
+
+   <h3>Card values:</h3>
+   <ul>
+      <li>2-10 will be worth its value.</li>
+      <li>J = 11</li>
+      <li>Q = 12</li>
+      <li>K = 13</li>
+      <li>A = 14 or 1</li>
+   </ul>
+
+   <h3>Ready to play a game of 21?</h3>
+   <a href="{{ path('start-game-21') }}">Start game</a>
 {% endblock %}
