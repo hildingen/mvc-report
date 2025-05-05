@@ -4,5 +4,13 @@
 {% block headertitle %}Game 21{% endblock %}
 
 {% block body %}
-   <h1>Here there will be cards!</h1>
+   <h1>Game of 21!</h1>
+
+   <p><span class="bold">Bankir:</span>{% for card in bankir %}
+        <li class="card">{{card}}</li>
+    {% endfor %}</p>
+   <p><span class="bold">Player:</span>{% for card in player %}
+        <li class="card">{{card}}</li>
+    {% endfor %}</p>
+
 {% endblock %}
