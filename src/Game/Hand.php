@@ -44,19 +44,19 @@ class Hand
         }
 
         if ($nrOfAces > 0) {
-            $val += $this->calcAces($nrOfAces);
+            $val += $this->calcAces($nrOfAces, $val);
         }
 
         return $val;
     }
 
-    private function calcAces($aces): int
+    private function calcAces($aces, $currentValue): int
     {
         $val = 0;
 
         for ($i = 0; $i < $aces; $i += 1) {
 
-            $val += ($val + 14 > 21 ? 1 : 14);
+            $val += ($currentValue + 14 > 21 ? 1 : 14);
         }
 
         return $val;
