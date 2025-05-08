@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
 use App\Game\Game21;
 
 class GameController extends AbstractController
@@ -36,8 +35,8 @@ class GameController extends AbstractController
         return $this->render('game/start.html.twig', $data);
     }
 
-    #[Route("/game/draw_card", name: "draw_card")]
-    public function draw_card(SessionInterface $session): Response
+    #[Route("/game/draw-card", name: "draw-card")]
+    public function drawCard(SessionInterface $session): Response
     {
         $game = $session->get("game");
 

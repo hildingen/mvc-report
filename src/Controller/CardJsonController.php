@@ -21,10 +21,10 @@ class CardJsonController
             $session->set("deck", $deck);
         }
 
-        $deck_str = $deck->sortDeck();
+        $deckStr = $deck->sortDeck();
 
         $data = [
-            'deck' => $deck_str
+            'deck' => $deckStr
         ];
 
         return new JsonResponse($data);
@@ -55,13 +55,13 @@ class CardJsonController
             $deck = new DeckOfCards();
         }
 
-        $drawn_card = $deck->drawCard();
+        $drawnCard = $deck->drawCard();
 
         $session->set("deck", $deck);
 
         $data = [
-            "deck_size" => count($deck->getString()),
-            "drawn_card" => $drawn_card->getAsString()
+            "deckSize" => count($deck->getString()),
+            "drawnCard" => $drawnCard->getAsString()
         ];
 
         return new JsonResponse($data);
@@ -85,8 +85,8 @@ class CardJsonController
         $session->set("deck", $deck);
 
         $data = [
-            "drawn_cards" => $hand->getString(),
-            "deck_size" => count($deck->getString()),
+            "drawnCards" => $hand->getString(),
+            "deckSize" => count($deck->getString()),
         ];
 
         return new JsonResponse($data);
