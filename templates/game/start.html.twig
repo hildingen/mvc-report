@@ -5,12 +5,51 @@
 
 {% block body %}
    <h1>Game of 21!</h1>
+     <div class="game-container">
+          <div class="player-container">
+               <div>
+               <h2>Bankir</h2>
+               <hr class="divider"/>
+               </div>
+               <h3>Cards:</h3>
+               <div class="card-container">
+                    {% for card in bankir %}
+                         <span class="card">{{card}}</span>
+                    {% endfor %}
+               </div>
+               <h3>Bankir score: {{ bankir_score }}</h3>
+          </div>
 
-   <p><span class="bold">Bankir:</span>{% for card in bankir %}
-        <li class="card">{{card}}</li>
-    {% endfor %}</p>
-   <p><span class="bold">Player:</span>{% for card in player %}
-        <li class="card">{{card}}</li>
-    {% endfor %}</p>
+          <div class="player-container">
+               <div>
+               <h2>Player</h2>
+               <hr class="divider"/>
+               </div>
+               <h3>Cards:</h3>
+               <div class="card-container">
+                    {% for card in player %}
+                         <span class="card">{{card}}</span>
+                    {% endfor %}
+               </div>
+               <h3>Player score: {{ player_score }}</h3>
+          </div>
+     </div>
+
+     <div class="game-btns">
+          {% if player_bust %}
+               <h2>Player bust!</h2>
+               <a href="{{ path('start-game-21') }}">Try again</a>  
+          {% elseif bankir_bust %}
+               <h2>Bankir bust! You win!</h2>
+               <a href="{{ path('start-game-21') }}">Try again</a>  
+          {% elseif bankir_score > player_score or bankir_score == player_score and bankir_score > 0 %}
+                <h2>Bankir Win! You loose!</h2>
+               <a href="{{ path('start-game-21') }}">Try again</a>  
+          {% else %}
+               <a href="{{ path('draw_card') }}">Draw card</a>   
+               <a href="{{ path('stay') }}">Stay</a>
+          {% endif %}
+     </div>
+
 
 {% endblock %}

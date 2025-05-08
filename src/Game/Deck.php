@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Game21;
+namespace App\Game;
 
-use App\Game21\CardGraphic;
+use App\Game\CardGraphic;
 
 class Deck
 {

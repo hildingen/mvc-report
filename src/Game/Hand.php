@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Game21;
+namespace App\Game;
 
-use App\Game21\Card;
+use App\Game\Card;
 
 class Hand
 {
@@ -25,6 +25,9 @@ class Hand
     public function getValue(): int
     {
         $val = 0;
+        $nrOfAces = 0;
+
+        // Fix A == 14 or 1
 
         foreach ($this->hand as $card) {
             $valOfCard = $card->getValue();
@@ -38,7 +41,17 @@ class Hand
             } elseif ($valOfCard == 'K') {
                 $val += 13;
             } elseif ($valOfCard == 'A') {
-                $val += 13;
+                $nrOfAces += 1;
+            }
+        }
+
+        if ($nrOfAces > 0) {
+            for ($i = 0; $i < $nrOfAces; $i++) {
+                if ($val + 14 > 21) {
+                    $val += 1;
+                } else {
+                    $val += 14;
+                }
             }
         }
 

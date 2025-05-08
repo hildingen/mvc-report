@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Game21;
+namespace App\Game;
 
 class Card
 {

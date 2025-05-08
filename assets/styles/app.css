@@ -217,3 +217,52 @@ nav ul li a:hover {
 .basic-sub-nav li a:hover {
     color: #123458;
 }
+
+.game-container {
+    border:2px solid black;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-container {
+    display: flex;
+    gap: 20px;
+}
+ 
+.divider {
+    background-color: black;
+    height: 2px;
+    width: 100%;
+}
+
+.game-btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.game-btns a {
+    width: 100px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    background-color: #87ceeb;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.game-btns a:hover {
+    background-color: #a1e4ff;
+}

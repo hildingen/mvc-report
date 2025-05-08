@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Game21;
+namespace App\Game;
 
-use App\Game21\Hand;
-use App\Game21\Deck;
+use App\Game\Hand;
+use App\Game\Deck;
 
 class Game21
 {
@@ -27,6 +27,16 @@ class Game21
         return $this->player->getString();
     }
 
+    public function getPlayerScore(): int
+    {
+        return $this->player->getValue();
+    }
+
+    public function getBankirScore(): int
+    {
+        return $this->bankir->getValue();
+    }
+
     public function getBankirHand(): array
     {
         return $this->bankir->getString();
@@ -39,7 +49,7 @@ class Game21
 
     public function bankirHit(): void
     {
-        $this->player->add($this->deck->drawCard());
+        $this->bankir->add($this->deck->drawCard());
     }
 
     public function checkBustPlayer(): bool
