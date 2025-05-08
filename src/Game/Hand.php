@@ -27,8 +27,6 @@ class Hand
         $val = 0;
         $nrOfAces = 0;
 
-        // Fix A == 14 or 1
-
         foreach ($this->hand as $card) {
             $valOfCard = $card->getValue();
 
