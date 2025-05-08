@@ -63,7 +63,30 @@
     <div class="report-div" id="kmom03">
         <h2>Kmom03</h2>
 
-        <p> Text </p>
+        <p>
+            Jag tyckte att det gick bra att modellera med flödesdiagram och psuedokod. Jag valde att inte göra alltför komplicerade lösningar så jag försökte hålla det väldigt enkelt. Mitt flödesdiagram förklarar själva "game" loopen vilket jag tycker
+            att jag implemneterade efer och fick till ett bra flöde som speglar diagrammet. I mitt psuedokod exempel valde jag att skriva för att hämta själva värdet för hela korthanden då jag på förhand tänkte att det skulle innehålla den största kompleciteten
+            då vi behöver hantera både siffror och bokstäver och om "A" är värda 14 eller 1. Jag hade en plan när jag skrev psuedokod exemplet men min själva implementation av den kod delen skiljer sig något då jag fick lägga till lite funktionalitet för att det 
+            skulle fungera som jag ville. Jag tror att det kan vara ett väldigt bra verktyg att använda vid starten på projekt för att ha något att "luta" sig emot när det står stilla. Har man på förhand tänkt igenom och gjort ordentliga diagram så borde projekten man
+            jobbar med gå smidigare och inte stå stilla så länge.
+        </p>
+
+        <p>
+            Jag tycker att jag fick ihop en bra struktur och jag försökte förhålla mig till att ha så lite kod som möjligt i mina controllers och hålla mestadels av koden i mina klasser. Kort klasserna hade vi ju redan byggt upp i föregående kmom så de kopierade jag
+            bara över till detta kmom men fick ändra lite minimalt i klasserna för att dem skulle fungera som jag ville. Jag valde även att skapa en klass "Game21" som skulle hålla själva spelet och sköta all funktionalitet och det fungerade bra skulle jag säga
+            , jag fick till metoder som skötte det de skulle. Själva Game21 objektet håller en hand för en spelare och en hand för "banken" och en kortlek. Så att skapa metoder för delarna gick väldigt smidigt fram tycker jag. Det jag ser som jag skulle kunna förbättra är att jag
+            kanske skulle dela upp mina twig filer lite mer. Nu sköter jag själva renderingen av spelet i en twig fil men kanske att jag skulle bryta ner den i mindre delar. Ska man vara petig så skulle animationer också lyfta själva spelet för att göra det mer levande.
+        </p>
+
+        <p>
+            Nu efter kmom03 känner jag att man börjar få grepp om det även fast jag hade väldigt svårt att komma igång med kmom03 då jag fick ett error i början och kunde inte starta igång applikationen. Efter mycket sökande i dokumentationen och tittande på andra symfony objekt såg jag
+            att min "src" mapp hade hoppat ner i min templates mapp och därav hittade inte Symfony "Kernel.php" filen vilket gjorde att jag inte kunde starta applikationen. Efter att jag flyttade upp den till root igen så fungerade det.
+            Men kort sagt så känns det bättre nu och att dela upp enligt "MVC" får jag en tydlig struktur.
+        </p>
+
+        <p>
+            Mitt TIL för detta kmom är faktiskt felsökning och letande i dokumentationen för Symfony då det tog mest tid för mig detta kmom. Det känns som det både kan vara bra och dåligt att jag fick detta error men nu är jag en erfarenhet rikare och lärt mig något nytt.
+        </p>
     </div>
 
     <div class="report-div" id="kmom04">
