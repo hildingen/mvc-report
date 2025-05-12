@@ -9,7 +9,7 @@
     <h1>Draw a card from deck</h1>
 
     <h2>Drawn card: </h2>
-    <p class="card">{{drawnCard}}</p>
+    <p class="card {{ cardSuit ==  "♥" or cardSuit == "♦" ? "red" : "" }}">{{drawnCard}}</p>
 
     <h2>Cards left in deck:</h2>
     <p>{{deck|length}}</p>

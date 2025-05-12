@@ -63,7 +63,8 @@ class CardController extends AbstractController
 
         $data = [
             "deck" => $deck->getString(),
-            "drawnCard" => $drawnCard->getAsString()
+            "drawnCard" => $drawnCard->getAsString(),
+            "cardSuit" => $drawnCard->getSuit()
         ];
 
         $session->set("deck", $deck);

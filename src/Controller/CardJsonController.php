@@ -30,7 +30,7 @@ class CardJsonController
         return new JsonResponse($data);
     }
 
-    #[Route("/api/deck/shuffle", methods: ['POST'])]
+    #[Route("/api/deck/shuffle", methods: ['GET'])]
     public function shuffleDeck(SessionInterface $session): Response
     {
         $deck = new DeckOfCards();
@@ -46,7 +46,7 @@ class CardJsonController
         return new JsonResponse($data);
     }
 
-    #[Route("/api/deck/draw", methods: ['POST'])]
+    #[Route("/api/deck/draw", methods: ['GET'])]
     public function drawCard(SessionInterface $session): Response
     {
         $deck = $session->get("deck");
@@ -67,7 +67,7 @@ class CardJsonController
         return new JsonResponse($data);
     }
 
-    #[Route("/api/deck/draw/{num<\d+>}", methods: ['POST'])]
+    #[Route("/api/deck/draw/{num<\d+>}", methods: ['GET'])]
     public function drawNrCards(int $num, SessionInterface $session): Response
     {
         $deck = $session->get('deck');

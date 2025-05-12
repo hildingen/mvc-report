@@ -10,7 +10,7 @@
 
     <ul class="deck-container">
     {% for card in deck %}
-        <li class="card">{{card}}</li>
+         <li class="card {{ "♥" in card or "♦" in card ? "red" : "" }}">{{card}}</li>
     {% endfor %}
     </ul>
 {% endblock %}

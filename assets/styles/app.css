@@ -266,3 +266,22 @@ nav ul li a:hover {
 .game-btns a:hover {
     background-color: #a1e4ff;
 }
+
+.api-big {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.api-bold {
+    font-size: 1.5rem;
+}
+
+.api-wrap a {
+    text-decoration: none;
+}
+
+.red {
+    border-color: red;
+    color: red;
+}

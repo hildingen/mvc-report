@@ -11,7 +11,7 @@
     <h2>Drawn cards: </h2>
     <ul class="deck-container">
       {% for card in hand %}
-        <li class="card">{{card}}</li>
+        <li class="card {{ "♥" in card or "♦" in card ? "red" : "" }}">{{card}}</li>
     {% endfor %}
     </ul>
     <h2>Cards left in deck:</h2>

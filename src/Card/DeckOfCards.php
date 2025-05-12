@@ -47,13 +47,13 @@ class DeckOfCards
 
         foreach ($this->deck as $card) {
             if ($card->getSuit() == '♥') {
-                $hearts[] = $card->getAsString();
+                $hearts[] = $card;
             } elseif ($card->getSuit() == '♠') {
-                $spades[] = $card->getAsString();
+                $spades[] = $card;
             } elseif ($card->getSuit() == '♦') {
-                $diamonds[] = $card->getAsString();
+                $diamonds[] = $card;
             } elseif ($card->getSuit() == '♣') {
-                $clubs[] = $card->getAsString();
+                $clubs[] = $card;
             }
         }
 
@@ -64,6 +64,15 @@ class DeckOfCards
 
         $sortedDeck = array_merge($hearts, $spades, $diamonds, $clubs);
 
-        return $sortedDeck;
+        return $this->deckToString($sortedDeck);
+    }
+
+    public function deckToString($deck): array
+    {
+        $values = [];
+        foreach ($deck as $card) {
+            $values[] = $card->getAsString();
+        }
+        return $values;
     }
 }
