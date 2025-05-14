@@ -62,6 +62,11 @@ class DeckOfCards
         asort($diamonds);
         asort($clubs);
 
+        $hearts = $this->sortLetterValues($hearts);
+        $spades = $this->sortLetterValues($spades);
+        $diamonds = $this->sortLetterValues($diamonds);
+        $clubs = $this->sortLetterValues($clubs);
+
         $sortedDeck = array_merge($hearts, $spades, $diamonds, $clubs);
 
         return $this->deckToString($sortedDeck);
@@ -73,6 +78,59 @@ class DeckOfCards
         foreach ($deck as $card) {
             $values[] = $card->getAsString();
         }
+        return $values;
+    }
+
+    public function sortLetterValues($arr): array
+    {
+        $values = [];
+        $arrToSort = [];
+        $jExist = false;
+        $qExist = false;
+        $kExist = false;
+        $AExist = false;
+
+        foreach ($arr as $card) {
+            if (is_numeric($card->getValue())) {
+                $values[] = $card;
+            } else {
+                if ($card->getValue() == 'J') {
+                    $jExist = true;
+                } elseif ($card->getValue() == 'Q') {
+                    $qExist = true;
+                } elseif ($card->getValue() == 'K') {
+                    $kExist = true;
+                } elseif ($card->getValue() == 'A') {
+                    $AExist = true;
+                }
+                $arrToSort[] = $card;
+            }
+        }
+
+        if ($jExist) {
+            $values[] = array_find($arrToSort, function (Card $val) {
+                return $val->getValue() == 'J';
+            });
+        }
+
+        if ($qExist) {
+            $values[] = array_find($arrToSort, function (Card $val) {
+                return $val->getValue() == 'Q';
+            });
+        }
+
+        if ($kExist) {
+            $values[] = array_find($arrToSort, function (Card $val) {
+                return $val->getValue() == 'K';
+            });
+        }
+
+        if ($AExist) {
+            $values[] = array_find($arrToSort, function (Card $val) {
+                return $val->getValue() == 'A';
+            });
+        }
+
         return $values;
     }
 }
